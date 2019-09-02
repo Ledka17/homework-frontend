@@ -46,4 +46,10 @@ QUnit.module('Тестируем функцию inverse', function () {
 		assert.deepEqual(inverse([ 1, 2, 3, 4, 5 ], -1), [ 4, 3, 2, 1, 5 ]);
 		assert.deepEqual(inverse([ 1, 2, 3, 4, 5 ], 8), [ 1, 2, 3, 4, 5 ]);
 	});
+
+	QUnit.test('Функция передают мусор', function (assert) {
+		assert.deepEqual(inverse(8), null);
+		assert.deepEqual(inverse({}, 0), null);
+		assert.deepEqual(inverse([8], 'sds'), null);
+	});
 });

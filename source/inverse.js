@@ -1,16 +1,16 @@
 'use strict';
 
-const inverse = function (lst, n = 0) {
+const inverse = (lst, n = 0) => {
+    if (!Array.isArray(lst) || typeof n != 'number') // проверка на входгые данные
+        return null;
+
+    if (lst.length === 0 | lst.length === 1) // возврат того же списка
+        return lst;
+
     let lst_a = lst.slice(0, n);
-    let lst_b = lst.slice(n, lst.length);
+    let lst_b = lst.slice(n);
     if (n >= 0) {
         return lst_a.concat(lst_b.reverse());
     }
-    return lst_a.reverse().concat(lst_b);
+    return lst_a.reverse().concat(lst_b)
 }
-
-/*const inverse = function (lst, n = 0) {
-    let a = Math.max(0, n);
-    let b = Math.min(lst.length, lst.length - n);
-    return lst.splice(a, b, lst.slice(a, b).reverse()); // почему-то не переворачиввет список
-}*/
