@@ -1,7 +1,7 @@
 'use strict';
 
 const inverse = (lst, n = 0) => {
-    if (!Array.isArray(lst) || typeof n !== 'number' || isNaN(n)) { // проверка на входгые данные
+    if (!Array.isArray(lst) || typeof n !== 'number' || Number.isNaN(n)) { // проверка на входгые данные
         return null;
     }
 
