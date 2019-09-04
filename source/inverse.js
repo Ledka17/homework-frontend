@@ -9,10 +9,10 @@ const inverse = (lst, n = 0) => {
         return lst;
     }
 
-    let lst_a = lst.slice(0, n);
-    let lst_b = lst.slice(n);
+    const lstFirstPart = lst.slice(0, n);
+    const lstSecondPart = lst.slice(n);
     if (n >= 0) {
-        return lst_a.concat(lst_b.reverse());
+        return lstFirstPart.concat(lstSecondPart.reverse());
     }
-    return lst_a.reverse().concat(lst_b);
+    return lstFirstPart.reverse().concat(lstSecondPart);
 }
